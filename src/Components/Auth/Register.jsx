@@ -46,6 +46,22 @@ const Register = props => {
     username: "",
     password: "",});
   };
+
+
+  async function socialLogin() {
+    
+    
+    let provider = new firebase.auth.FacebookAuthProvider();
+   
+  
+   try {
+     const result = await firebase.auth().signInWithPopup(provider);
+     console.log(result);
+   } catch (error) {
+     toast.error(error.message);
+   }
+ }
+
   return (
     <section id="AuthBlock" style={{ background: `url(images/poster.jpg)` }}>
       <article>
@@ -77,6 +93,7 @@ const Register = props => {
               onChange={handleChange}
               required
             />
+
             <div>
               <button>{loading === true ? "loading..." : "Sign up"}</button>
             </div>
@@ -92,7 +109,7 @@ const Register = props => {
               </div>
 
               <footer>
-                <div>
+                <div onClick={() => socialLogin()}>
                   <i className="fab fa-facebook-f"></i>
                   Login with facebook
                 </div>

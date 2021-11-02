@@ -17,19 +17,7 @@ const LeftNavbar = () => {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/">Tv Shows</a>
-              </li>
-              <li>
-                <a href="/">Movies</a>
-              </li>
-              <li>
                 <Link to="/upload-movie">Upload Movie</Link>
-              </li>
-              <li>
-                <a href="/">New&popular</a>
-              </li>
-              <li>
-                <a href="/">MyList</a>
               </li>
             </ul>
           </Fragment>

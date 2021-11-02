@@ -8,7 +8,8 @@ import "./RightNavbar.css";
 import { Fragment } from "react";
 const RightNavbar = () => {
   let USER = useContext(AuthContext);
-  // let { displayName, photoURL, email } = USER;
+  //  let { displayName, photoURL, email } = USER;
+  // // console.log(USER.photoURL)
 
   let SignOut = () => {
     return firebase
@@ -42,6 +43,8 @@ const RightNavbar = () => {
             />
           </a>
         </li>
+
+
         <li>
           <a href="/" onClick={SignOut}>
             Sign out
