@@ -32,13 +32,8 @@ const Login = ({ history }) => {
       setState({ loading: true });
       let userData = await firebase
         .auth()
-        .signInWithEmailAndPassword(email, password);
-      if (userData.user.emailVerified === true) {
-        toast.success(`successfully user logged in`);
+        .signInWithEmailAndPassword(email, password)
         history.push("/profile");
-      } else {
-        toast.error(`user not yet verified please verify and login`);
-        history.push("/signin");
       }
     } catch (error) {
       toast.error(error.message);
