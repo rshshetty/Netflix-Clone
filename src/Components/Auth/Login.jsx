@@ -34,7 +34,7 @@ const Login = ({ history }) => {
         .auth()
         .signInWithEmailAndPassword(email, password)
         history.push("/profile");
-      }
+      
     } catch (error) {
       toast.error(error.message);
     } finally {
